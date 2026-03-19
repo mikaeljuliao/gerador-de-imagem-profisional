@@ -1,0 +1,43 @@
+<!--
+
+como implementar o projeto com n8n:
+para criar e trazer um webhook para o n8n, nos podemos
+utilizar em qulquer aplicaçõe, tambem podemos definir uma senah, uma key,
+qualquer aplicaçao podera fazer ma requisizão para o webhok, 
+
+para isso, colocamos uma nova wbhook no n8n, e colocamos que o metodo que ele
+ira receber sera do tipo post, salvamos e por enquando iremos utilizar a url de teste gerada,
+do webhook, para fazer a requesição, depois iremos colocar a url do webhook no nosso projeto,
+a e teste por enquadno e essa: http://localhost:5678/webhook-test/06c4db0b-3e9d-4daa-8bff-cceb90711b9e
+e em seguida criamos a nossa requisizão http para esse nosso webhoook, utilizamos o fetch e colocamos o metodo.
+exemplo:
+
+ const n8n8WebhookUrl = "http://localhost:5678/webhook-test/06c4db0b-3e9d-4daa-8bff-cceb90711b9e"
+     const n8nResponse = await fetch(n8n8WebhookUrl, {
+         method: "POST",
+        
+     })
+
+dessa forma pegamso a url do webhook e passamos que o metodo e o metodo post.     
+
+
+tambem fizemos condição pra caso der erro e pra caso der certo que ira pegar o json.
+exemplo:
+ const n8n8WebhookUrl = "http://localhost:5678/webhook-test/06c4db0b-3e9d-4daa-8bff-cceb90711b9e"
+     const n8nResponse = await fetch(n8n8WebhookUrl, {
+         method: "POST",
+         body: formData
+     })
+
+     if(!n8nResponse.ok){
+         return NextResponse.json(
+            {
+                sucess: false,
+                error: "Error ao analisar e  gerar foto",
+            },
+        {status: 400,},
+    )
+    }
+
+    const response = await n8nResponse.json()
+-->
