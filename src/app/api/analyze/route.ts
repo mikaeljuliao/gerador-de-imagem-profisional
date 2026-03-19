@@ -59,6 +59,8 @@ export async function POST(request: NextRequest){
 
     const response = await n8nResponse.json()
 
+    console.log("response n8n8", response)
+
     return NextResponse.json({
         success:true,
         message: "Foto profisioal gerada com sucesso!",

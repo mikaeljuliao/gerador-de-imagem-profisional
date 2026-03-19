@@ -2,7 +2,7 @@
 
 import { useMutation } from '@tanstack/react-query';
 import React, { useState } from 'react'
-import { generateProfessionalPhoto} from '@/lib/api/aalyze'
+import { generateProfessionalPhoto} from '@/lib/api/analyze'
 
 interface uploadPhotoProps {
   onPhotoSelected: (photo: string) => void
